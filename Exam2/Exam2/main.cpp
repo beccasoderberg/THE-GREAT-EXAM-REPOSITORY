@@ -21,7 +21,6 @@ int main() {
 	int errors = 0;
 
 	//Create the cities
-//ok i have no idea what is causing this error 
 	City* katchem = new City("Katchem");
 	City* spokane = new City("Spokane");
 	City* seattle = new City("Seattle");
@@ -30,7 +29,7 @@ int main() {
 	//Bonus point if you can tell me why I picked these names and Ids ;)
 	if (spokane->populationSize() == 0)
 	{
-//couldn't resist a good google quest. red bull rampage 2016. 
+//winners of red bull rampage 2016
 		Citizen* brandon = new Citizen(1, "Brandon", "Semenuk", "Green");
 		spokane->addCitizen(brandon);
 		delete brandon;
@@ -56,7 +55,7 @@ int main() {
 	//Bonus point if you can tell me why I picked these names ;)
 	if (katchem->populationSize() == 0)
 	{
-//oh these ones are more challenging
+//apple engineers, i think they designed the macbook pro.
 		Citizen* Bartley = new Citizen(6, "Bartley", "Andre", "Green");
 		katchem->addCitizen(Bartley);
 		delete Bartley;
@@ -76,9 +75,7 @@ int main() {
 	}
 	else
 	{
-//don't know about this error either. apparently related to that other mysterious error. mayhaps i will figure it out.
 		Citizen* Richard = katchem->getCitizenWithId(9);
-//this reminds me, i have some nulls i need to put back in
 		if (Richard == NULL)
 		{
 			cout << "ERROR: Could not find Richard" << endl;
@@ -135,7 +132,6 @@ int main() {
 	}
 
 
-//there's that property i need to put in. what about 'bluelovers'? is that just another array or what??? 
 	vector<Citizen*> blueLovers = spokane->getCitizensForFavoriteColor("Blue");
 	if (blueLovers.size() != 2)
 	{

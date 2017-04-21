@@ -14,17 +14,25 @@ class City
 private:
 	string _name;
 	int _size;
+//do i need this? why? don't really understand what i'm doing here
+	vector<Citizen*> citizenList;
 public:
+//constructors; get functions for name & size
 	string getname;
 	int getsize;
-//i was just about to delete this city() like i did with all the others. will have to put them all back, yes i am lazy and horrible
 	City();
 	City(string name, int size);
+	~City();
+//here are the citizen retrieval program, the citizen addition mechanism, and the hue favorability assemblage
 	Citizen* citizenatindex(int index);
 	void addCitizen(Citizen* citizen);
-//that pesky favorite color again
-	vector <Citizen*> getFavoriteColor(string color);
 	int getCitizensForFavoriteColor();
+//i tried to make vectors for citizen list & color preference, with questionable success
+	vector<Citizen*> citizenList();
+	vector<Citizen*> bluelovers;
+	vector<Citizen*> greenlovers;
+	vector <Citizen*> getfavoritecolor(string color);
+	vector <Citizen*> setfavoritecolor(string color);
 };
 
 #endif CITY_H_

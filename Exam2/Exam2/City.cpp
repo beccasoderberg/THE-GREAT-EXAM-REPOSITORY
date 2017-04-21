@@ -5,42 +5,48 @@
 class City
 {
 private:
+//again, these private variables seem unnecessary
 	string _name;
 	int _size;
 public:
-
+	vector<Citizen*> citizenList()
+	{
+//i never fixed the citizenlist thing, yeah, it comes up a lot
+		citizenList.pushback(c);
+	}
+//a get function and then a constructor that retrieves citizen information 
 		int populationSize()
 	{
 		return _size;
 	}
-
-	City(string name, int size)
+	City::City(string name, int size)
 	{
-		ifstream input("citizen.txt");
-			if (input.is_open)
-				string name, size;
-//compiler doesn't like these identifiers. not sure why. 
-//at first i just copy & pasted stuff off your github and this worked, so i must have changed something.
-				while (input >> id >> first >> last >> color);
-				{
-					Citizen* c = new Citizen(id, first, last, color);
-//i keep using citizenList like this everywhere and it is super wrong. don't know if pointer difficulties or what.
-					citizenList.pushback(c);
-				}
+		_name = name;
+		ifstream input(_name, ios::in);
+		if (input.is_open())
+		{
+			string name, size;
+			while (input >> id >> first >> last >> color);
+			{
+				Citizen* c = new Citizen(id, first, last, color);
+				citizenList.pushback(c);
+			}
+		}
 	}
+//other things that you can do with the citizen list, or you could, if you knew how
 	void getCitizenWithId(int id)
 	{
-//i don't know if citizenlist.size is even close to being right. is this due to the citizenList problem?
 		for (int i = 0; i < citizenList.size(); i++)
 		{
-//same question with citizenList.id. 
-			if(citizenList.id[i] = id)
-				return citizenList[i];
+			if (citizenList.id[i] = id)
+				return first.citizenList[i] || last.citizenList[i];
+		
 		}
+		
 	}
 	Citizen* citizenatindex(int index)
 	{
-		if (index >= 0 && index < citizenList.size())
+		for (index >= 0 && index < citizenList.size())
 		{
 			return citizenList[index];
 		}
@@ -50,10 +56,70 @@ public:
 		Citizen* c = new Citizen(citizen);
 		citizenList.push_back(c);
 	}
-//i need to put in getCitizensForFavoriteColor() and I don't even know where to begin???
 
-//i feel like i should definitely know how to define this vector. 
-	vector<Citizen*> citizenList();
-//i also need to define this one. here i am even more hopelessly lost, oops.
-	vector <Citizen*> getfavoritecolor(string color);
+//ok, this is where it gets really shady	
+	vector<Citizen*> bluelovers
+	{
+		if (color.c == blue)
+		{
+			bluelovers.pushback(c);
+		}
+	}
+	vector<Citizen*> greenlovers
+	{
+		if (color.c == green)
+		{
+			greenlovers.pushback(c);
+		}
+	}
+	vector <Citizen*> getfavoritecolor(string color)
+	{
+		for (index >= 0 && index < citizenList.size())
+		{
+			return color.citizenList[index];
+		}
+	}
+	vector <Citizen*> setfavoritecolor(string color)
+	{
+		_color = color;
+	}
+//destructor
+	City::~City()
+	{
+		fstream output(_name, ios::out);
+		if (output.is_open())
+		{
+			for (int i = 0; i < citizenList.size(); i++)
+			{
+				outfile << citizenList[i]->getId() << " "
+					<< citizenList[i]->getFirstName() << " "
+					<< citizenList[i]->getLastName() << " "
+					<< citizenList[i]->getColor() << endl;
+				delete citizenList[i];
+			}
+		}
+		else
+		{
+			for (int i = 0; i < citizenList.size(); i++)
+			{
+				delete citizenList[i];
+			}
+		}
+	}
+	Citizen* citizenatindex(int index)
+	{
+		if (index >= 0 && index < citizenList.size())
+		{
+			return citizenList[index];
+		}
+		return NULL;
+	}
+	int getCitizensForFavoriteColor()
+	{
+		for (index >= 0 && index < citizenList.size())
+		{
+			if color.citizenList[index] = color
+				return color.citizenList[index];
+		}
+	}
 };
